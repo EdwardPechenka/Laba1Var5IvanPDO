@@ -1,0 +1,60 @@
+# Инструкция по запуску Лабораторной работы
+
+Чтобы всё работало корректно, выполни эти 4 простых шага.
+
+### Шаг 1. Размещение файлов
+Распакуй папку с проектом в директорию твоего локального веб-сервера (OpenServer). 
+* Если у тебя старая версия OpenServer (5.x), это папка `OSPanel\domains`.
+* Если новая (6.0), это папка `OSPanel\home`.
+
+<img width="757" height="522" alt="image" src="https://github.com/user-attachments/assets/c4237131-f4f9-4e9f-aa70-35c90068e471" />
+
+* Сдесь не забудь создать папку custintdb.local, это обязательно, и закинь туда все файлы:
+
+<img width="1173" height="432" alt="image" src="https://github.com/user-attachments/assets/b8293860-83b0-441e-b686-a0f6ee29cfaf" />
+
+
+### Шаг 2. Загрузка базы данных (ОБЯЗАТЕЛЬНО)
+Проект не будет работать без базы данных.
+1. Запусти OpenServer и открой **phpMyAdmin**.
+
+<img width="568" height="434" alt="image" src="https://github.com/user-attachments/assets/3f0adaac-645a-46ee-a20d-9f191c5a8d8b" />
+
+
+<img width="1909" height="523" alt="image" src="https://github.com/user-attachments/assets/4a911c5a-6640-4f14-b325-2155e5d86545" />
+
+
+3. Перейди во вкладку **Импорт** (Import) в верхнем меню.
+
+<img width="1919" height="557" alt="Знімок екрана 2026-05-23 125036" src="https://github.com/user-attachments/assets/a3c58531-8829-42ce-8d21-760946322ac1" />
+
+4. Выбери файл `lb_pdo_goods.sql` (он лежит в папке с проектом) и нажми **Import**.
+База данных `lb_pdo_goods` и все таблицы с данными создадутся автоматически.
+
+<img width="1624" height="771" alt="image" src="https://github.com/user-attachments/assets/4848d2e3-b9e0-4a3e-9eab-83b3efd0e76c" />
+
+
+### Шаг 3. Настройка подключения (db.php)
+**Важный момент!** Настройки базы зависят от твоей версии OpenServer. 
+Открой файл `db.php` в любом редакторе. Сейчас там стоят настройки для OpenServer 6.0:
+* `$host = 'MySQL-8.4';`
+* `$pass = '';`
+
+**Если у тебя старая версия OpenServer (или XAMPP), измени эти строки на стандартные:**
+* `$host = 'localhost';`
+* `$pass = 'root';` (или оставь пустым `''`, если пароля нет).
+
+### Шаг 4. Запуск
+Запусти проект (или перезапусти OpenServer, чтобы он увидел новую папку). Открой браузер и перейди по локальному адресу проекта.
+
+Также просмотри, что бы у тебя были эти версии PHP м MySQL:
+
+<img width="419" height="174" alt="image" src="https://github.com/user-attachments/assets/e6fa492f-2214-459c-b6b7-9c1c1157d72d" />
+
+<img width="468" height="151" alt="image" src="https://github.com/user-attachments/assets/499aa6a8-d1d0-4118-bae3-c0927a42d8bb" />
+
+
+---
+### 🛠 Частые ошибки:
+* **Списки пустые:** Ты забыла импортировать файл `lb_pdo_lessons.sql` в phpMyAdmin.
+* **Ошибка "target machine actively refused it" (SQLSTATE 2002):** Сервер не может найти базу. Проверь, правильно ли указан `$host` в файле `db.php` для твоей версии OpenServer.
