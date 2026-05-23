@@ -1,4 +1,4 @@
-# Инструкция по запуску Лабораторной работы
+<img width="441" height="183" alt="image" src="https://github.com/user-attachments/assets/123604c3-bdd4-40c1-adef-191178c9ea02" /># Инструкция по запуску Лабораторной работы
 
 Чтобы всё работало корректно, выполни эти 4 простых шага.
 
@@ -53,6 +53,14 @@
 
 <img width="468" height="151" alt="image" src="https://github.com/user-attachments/assets/499aa6a8-d1d0-4118-bae3-c0927a42d8bb" />
 
+### Шаг 5. Проверка приложения
+Пройдись по всем запросам, тебе должны показываться все списки данных из БД
+
+<img width="441" height="183" alt="image" src="https://github.com/user-attachments/assets/5b063b1b-87c3-4f2c-bebd-ee086b4ed4b9" />
+
+<img width="463" height="193" alt="image" src="https://github.com/user-attachments/assets/f8c42dde-655e-4def-82f3-c0cebb22e656" />
+
+<img width="556" height="259" alt="image" src="https://github.com/user-attachments/assets/8ac9fc87-d37e-4f00-b0b7-eff0e1fb558c" />
 
 ---
 ### 🛠 Частые ошибки:
